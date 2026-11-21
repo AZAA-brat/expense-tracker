@@ -1,22 +1,19 @@
-import sqlite3
-from config import DB_PATH
-from datetime import datetime
+from storage.connection import get_connection
 
 def init_db():
-    cnn = sqlite3.connect(DB_PATH)
-    cnn.execute("PRAGMA foreign_keys = ON;")
+    cnn = get_connection()
     cnn.executescript(
     """
     CREATE TABLE IF NOT EXISTS users(
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        telegram_id INTEGER NOT NULL UNIQUE,
+        telegram_id INTEGER NOT NULL COLLATE NOCASE UNIQUE,
         username TEXT,
         created_at TEXT NOT NULL DEFAULT (datetime('now'))
     );
         
     CREATE TABLE IF NOT EXISTS categories(
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        category TEXT NOT NULL,
+        category TEXT NOT NULL UNIQUE,
         created_at TEXT NOT NULL DEFAULT (datetime('now'))
     );
     
