@@ -1,4 +1,4 @@
-from storage.connection import get_connection
+from storage.scheme.connection import get_connection
 
 def init_db():
     cnn = get_connection()
