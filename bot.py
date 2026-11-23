@@ -4,9 +4,11 @@ from config import bot, dp
 from logging_config import setup_logger
 import logging
 import asyncio
-
+from storage.scheme.database import init_db
+import handlers.start as start
+init_db()
 setup_logger()
-dp.include_routers()
+dp.include_routers(start.router)
 logger = logging.getLogger(__name__)
 
 async def main():

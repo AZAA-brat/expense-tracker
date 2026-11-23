@@ -1,0 +1,6 @@
+GREETING = "<i>HI! {name}</i>"
+START_ERROR = "<b>This command is available only for Telegram users.</b>"
+ADD_EXPENSE = "Add expense 📥"
+SHOW_REPORT = "Show report 🧾"
+CHARTS = "Charts 📊"
+CATEGORIES = "Categories 📝"
