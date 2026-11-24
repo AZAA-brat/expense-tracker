@@ -6,9 +6,10 @@ import logging
 import asyncio
 from storage.scheme.database import init_db
 import handlers.start as start
+import handlers.category as category
 init_db()
 setup_logger()
-dp.include_routers(start.router)
+dp.include_routers(start.router, category.router)
 logger = logging.getLogger(__name__)
 
 async def main():
