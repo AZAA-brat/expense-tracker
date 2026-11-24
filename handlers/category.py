@@ -3,7 +3,6 @@ from aiogram.fsm.context import FSMContext
 from utils.phrases import ADD_CATEGORY, CATEGORY_FROM_USER, CATEGORY_NAME_EMPTY, CATEGORY_ALREADY_EXISTS, CATEGORY_CREATED
 from states import CategoryState
 from storage.categories.add import add_category
-from functions.views import show_category
 router = Router()
 
 @router.message(F.text == ADD_CATEGORY)
@@ -27,7 +26,6 @@ async def process_category_name(message: types.Message, state: FSMContext):
 
     await state.clear()
     await message.answer(CATEGORY_CREATED.format(name=category_name))
-    await show_category(message)
 
 
 

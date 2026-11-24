@@ -1,7 +1,7 @@
 from storage.categories.list import list_categories
 from aiogram.types import Message
 from aiogram.utils.keyboard import InlineKeyboardBuilder
-from utils.phrases import CATEGORY_CHOICE, NO_CATEGORIES
+from utils.phrases import NO_CATEGORIES, CATEGORY_LIST
 from keyboards.callbacks import CategoryCB
 
 async def show_category(message: Message) -> None:
@@ -17,6 +17,6 @@ async def show_category(message: Message) -> None:
         )
     builder.adjust(2)
     await message.answer(
-        CATEGORY_CHOICE,
+        CATEGORY_LIST,
         reply_markup=builder.as_markup(),
     )
