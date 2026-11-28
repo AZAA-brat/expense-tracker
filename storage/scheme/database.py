@@ -6,14 +6,14 @@ def init_db():
     """
     CREATE TABLE IF NOT EXISTS users(
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        telegram_id INTEGER NOT NULL COLLATE NOCASE UNIQUE,
+        telegram_id INTEGER NOT NULL UNIQUE,
         username TEXT,
         created_at TEXT NOT NULL DEFAULT (datetime('now'))
     );
         
     CREATE TABLE IF NOT EXISTS categories(
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        category TEXT NOT NULL UNIQUE,
+        category TEXT NOT NULL COLLATE NOCASE UNIQUE,
         created_at TEXT NOT NULL DEFAULT (datetime('now'))
     );
     

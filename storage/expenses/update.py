@@ -17,7 +17,7 @@ def update_expense(new_expense, expense_id):
         if row is None:
             return False
         rate = row[0]
-        usd_amount = round(new_expense / rate, 2)
+        usd_amount = round(new_expense / rate, 6)
         cursor.execute(
             """
             UPDATE expenses
