@@ -1,6 +1,6 @@
 from aiogram import types, Router, F
 from utils.phrases import CATEGORIES
-from functions.views import show_category
+from functions.views.for_categories import show_category
 
 router = Router()
 @router.message(F.text == CATEGORIES)

@@ -3,7 +3,7 @@ from storage.scheme.connection import get_connection
 def add_expense(category_id, expense, rate, name):
     if rate > 0:
         usd = expense / rate
-        usd_amount = round(usd, 2)
+        usd_amount = round(usd, 6)
     else:
         raise ValueError ("rate is invalid")
     cnn = get_connection()
